@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.userID {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.userID .password-toggle-icon {
+    position: relative;
+    top: -35px;
+    right: 5%;
+    float: right;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input:focus {
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.Form{
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    padding: 1.5rem;
+}
+
+.error{
+    color: brown;
+}
+
+.success-container {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.okay-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.toLogin {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.toLogin a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.toLogin a:hover {
+    text-decoration: underline;
+}
+
+.toRecover {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.toRecover a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.toRecover a:hover {
+    text-decoration: underline;
+}
+
+.cart-message-container {
+    position: fixed;
+    top: 0;
+    background-color: green;
+    width: 100%;
+    left: 0;
+    align-items: center;
+
+}
+
+.cart-message {
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    /* margin-left: 45%; */
+    display: flex;
+    justify-content: center;
+}
+
+.close {
+    position: absolute;
+    font-size: 20px;
+    width: 2rem;
+    height: 2rem;
+    font-weight: bold;
+    top: 5px;
+    left: 70%;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#check-icon {
+    position: absolute;
+    left: 39%;
+    top: 11px
+}
+
+@media (max-width: 667px){
+    .Form{
+        max-width: 300px;
+    }
+} 

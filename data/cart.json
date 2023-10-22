@@ -1,0 +1,17 @@
+{
+  "cartData": {
+    "products": [
+      {
+        "id": "3",
+        "title": "Pepper",
+        "quantity": 3
+      },
+      {
+        "id": "4",
+        "title": "Green Beans",
+        "quantity": 3
+      }
+    ],
+    "totalPrice": "₦ 11,100"
+  }
+}

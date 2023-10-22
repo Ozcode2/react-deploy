@@ -1,0 +1,108 @@
+/* Apply 300% width to the body for screens less than 800px */
+@media(min-width:830px) and (max-width: 1024px) {
+    body.CartPage {
+        width: 120%;
+    }
+
+    .cart-item{
+        width: 50%;
+    }
+
+    .cart-card{
+        left: 80%;
+    }
+}
+
+/* Apply 300% width to the body for screens less than 800px */
+@media(min-width: 670px) and (max-width: 829px) {
+    body.CartPage {
+        width: 150%;
+    }
+
+    .cart-item{
+        width: 50%;
+    }
+
+    .cart-card{
+        left: 100%;
+    }
+}
+
+/* Apply 300% width to the body for screens less than 800px */
+@media(min-width: 610px) and (max-width: 669px) {
+    body.CartPage {
+        width: 180%;
+    }
+
+    .cart-item{
+        width: 50%;
+    }
+
+    .cart-card{
+        left: 120%;
+    }
+}
+
+/* Apply 300% width to the body for screens less than 800px */
+@media(min-width: 555px) and (max-width: 610px) {
+    body.CartPage {
+        width: 200%;
+    }
+
+    .cart-item{
+        width: 50%;
+    }
+
+    .cart-card{
+        left: 140%;
+        top: 260px;
+    }
+}
+
+/* Apply 300% width to the body for screens less than 800px */
+@media(min-width: 460px) and (max-width: 555px) {
+    body.CartPage {
+        width: 220%;
+    }
+
+    .cart-item{
+        width: 50%;
+    }
+
+    .cart-card{
+        left: 150%;
+        top: 260px;
+    }
+}
+
+/* Apply 300% width to the body for screens less than 800px */
+@media(min-width: 355px) and (max-width: 460px) {
+    body.CartPage {
+        width: 240%;
+    }
+
+    .cart-item{
+        width: 50%;
+    }
+
+    .cart-card{
+        left: 150%;
+        top: 260px;
+    }
+}
+
+/* Apply 300% width to the body for screens less than 800px */
+@media(min-width: 155px) and (max-width: 355px) {
+    body.CartPage {
+        width: 300%;
+    }
+
+    .cart-item{
+        width: 60%;
+    }
+
+    .cart-card{
+        left: 200%;
+        top: 260px;
+    }
+}

@@ -8,8 +8,12 @@ const Card = ({ products }) => {
       key={product.id}
     >
       <div className="card">
-        <img src={product.image} alt={product.title} />
-        <h3>{product.title.length < 10 ? product.title : `${product.title.slice(0, 10)}...`}</h3>
+        <img src={process.env.PUBLIC_URL + product.image} alt={product.title} />
+        <h3>
+          {product.title.length < 10
+            ? product.title
+            : `${product.title.slice(0, 10)}...`}
+        </h3>
         <p>₦{product.price}</p>
         <del>₦{product.cut}</del>
       </div>

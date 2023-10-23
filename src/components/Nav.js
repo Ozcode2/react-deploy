@@ -55,24 +55,19 @@ const Nav = ({ search, setSearch }) => {
           {dropdownVisible && (
             <ul className="dropdown-content">
               <li>
-                <a id="register" href="/sign-in" title="Register">
+                <Link to="/sign-in" title="Register" id="register">
                   Register
-                </a>
+                </Link>
               </li>
               <li>
-                <a id="login" href="/login" title="Login">
+                <Link to="/login" title="Login" id="login">
                   Login
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  id="logout"
-                  href="/react-deploy"
-                  onClick={handleLogout}
-                  title="Logout"
-                >
+                <Link to="/react-deploy" onClick={handleLogout} title="Logout" id="logout">
                   Logout
-                </a>
+                </Link>
               </li>
             </ul>
           )}

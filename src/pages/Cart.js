@@ -153,7 +153,7 @@ function Cart({ products }) {
               return (
                 <div key={productId} className="cart-item">
                   <img
-                    src={product.image}
+                    src={process.env.PUBLIC_URL + product.image}
                     className="image"
                     alt={product.title}
                   />

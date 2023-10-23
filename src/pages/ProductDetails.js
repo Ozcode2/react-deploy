@@ -74,7 +74,11 @@ function ProductDetail({ products }) {
     <div className="pro-section">
       <CartMessage message={cartMessage} />
       <section key={id} className="details-section">
-        <img src={product.image} className="image" alt=""></img>
+        <img
+          src={process.env.PUBLIC_URL + product.image}
+          className="image"
+          alt=""
+        ></img>
         <div>
           <h3 id="name">{product.title}</h3>
           <p id="cost">₦{product.price}</p>

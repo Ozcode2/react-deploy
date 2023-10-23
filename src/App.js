@@ -65,7 +65,7 @@ function App() {
         <Route
           exact
           path="/"
-          element={<Home products={searchResults} />}
+          element={<Home products={products} />}
         ></Route>
         <Route exact path="/sign-in" element={<RegistrationForm />}></Route>
         <Route

@@ -4,7 +4,6 @@ import { useUsername } from "../context/UsernameContext";
 import { useCart } from "../context/CartContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-
 const Login = () => {
   const navigate = useNavigate();
   const { setCart } = useCart();
@@ -86,7 +85,6 @@ const Login = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
-
   return (
     <div className="Form">
       {registrationStatus === "success" ? (
@@ -96,7 +94,7 @@ const Login = () => {
             className="okay-button"
             onClick={() => {
               setRegistrationStatus(null);
-              navigate("/");
+              navigate("/react-deploy");
             }}
           >
             Okay

@@ -46,7 +46,7 @@ const PasswordRecovery = () => {
 
     const getEmail = localStorage.getItem("registeredEmail")
     const getPassword = localStorage.getItem("registeredPassword")
-      if (formData.email == getEmail) {
+      if (formData.email === getEmail) {
         setCartMessage("your password is " + getPassword)
       }
   };

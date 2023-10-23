@@ -6,6 +6,7 @@ const Home = ({ products }) => {
   const { registeredUsername } = useUsername();
   const [loading, setLoading] = useState(true);
   const [usernameFromLocalStorage, setUsernameFromLocalStorage] = useState("");
+  const [dataLoaded, setDataLoaded] = useState(false);
 
   // Load the logged-in user from localStorage
   useEffect(() => {
@@ -14,10 +15,18 @@ const Home = ({ products }) => {
       setUsernameFromLocalStorage(getUserName);
     }
 
+    // Simulate a 2-second delay
     setTimeout(() => {
       setLoading(false);
-    }, 2000); // Simulating a 2-second delay
+    }, 2000);
   }, []);
+
+  // Load products when data is loaded
+  useEffect(() => {
+    if (!loading) {
+      setDataLoaded(true);
+    }
+  }, [loading]);
 
   return (
     <div className="Home">
@@ -34,7 +43,7 @@ const Home = ({ products }) => {
                 Buy Your Fresh And Edible Groceries With 25% Off Sales
               </marquee>
             </div>
-            {Array.isArray(products) && products.length > 0 ? (
+            {dataLoaded && Array.isArray(products) && products.length > 0 ? (
               <Card products={products} />
             ) : (
               <p className="search-alert" style={{ marginTop: "2rem" }}>

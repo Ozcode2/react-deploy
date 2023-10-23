@@ -40,7 +40,7 @@ const Nav = ({ search, setSearch }) => {
       </form>
       <ul>
         <li>
-          <Link to="/" title="Home">
+          <Link to="/react-deploy" title="Home">
             <FaHome className="icon" />
             Home
           </Link>
@@ -67,7 +67,7 @@ const Nav = ({ search, setSearch }) => {
               <li>
                 <a
                   id="logout"
-                  href="/"
+                  href="/react-deploy"
                   onClick={handleLogout}
                   title="Logout"
                 >

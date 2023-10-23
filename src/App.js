@@ -64,8 +64,13 @@ function App() {
       <Routes>
         <Route
           exact
-          path="/"
-          element={<Home products={products} />}
+          path="/react-deploy"
+          element={
+            <>
+              <Home products={searchResults} />
+              {console.log("Home component rendered")}
+            </>
+          }
         ></Route>
         <Route exact path="/sign-in" element={<RegistrationForm />}></Route>
         <Route

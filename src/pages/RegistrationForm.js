@@ -173,7 +173,7 @@ const RegistrationForm = () => {
             className="okay-button"
             onClick={() => {
               setRegistrationStatus(null);
-              navigate(`/?username=${formData.username}`);
+              navigate(`/react-deploy?username=${formData.username}`);
             }}
           >
             Okay

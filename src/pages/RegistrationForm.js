@@ -180,7 +180,7 @@ const RegistrationForm = () => {
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="registry">
           <div className="userID">
             <label>Username:</label>
             <input

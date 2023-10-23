@@ -160,3 +160,10 @@ button[type="submit"]:hover {
         max-width: 300px;
     }
 } 
+
+@media (max-width: 667px){
+    .registry{
+        margin-bottom: 100px ;
+    }
+} 
+

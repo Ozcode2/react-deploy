@@ -6,7 +6,7 @@ import { useUsername } from "../context/UsernameContext";
 
 const Nav = ({ search, setSearch }) => {
   const { cart, clearCart } = useCart(); // Use the cart context
-  const { clearUsername } = useUsername();
+  const { clearUsername, registeredUsername } = useUsername();
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   // Calculate the total quantity of all products in the cart
@@ -21,10 +21,17 @@ const Nav = ({ search, setSearch }) => {
 
   const handleLogout = () => {
     localStorage.setItem("store", JSON.stringify(cart));
+    localStorage.setItem("storedUsername", registeredUsername);
     // Clear the cart and username when logging out
     clearCart({});
     clearUsername();
+
+    // Check if the current path is "/react-deploy" before refreshing
+    if (window.location.pathname === "/react-deploy") {
+      window.location.reload();
+    }
   };
+
 
   return (
     <nav className="Nav">
@@ -65,7 +72,12 @@ const Nav = ({ search, setSearch }) => {
                 </Link>
               </li>
               <li>
-                <Link to="/react-deploy" onClick={handleLogout} title="Logout" id="logout">
+                <Link
+                  to="/react-deploy"
+                  onClick={handleLogout}
+                  title="Logout"
+                  id="logout"
+                >
                   Logout
                 </Link>
               </li>

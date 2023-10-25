@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import { FaPlus, FaMinus, FaTrash } from "react-icons/fa";
 import CartMessage from "../components/CartMessage";
-import "./Cart.css"
+import "./Cart.css";
+import Confetti from "react-confetti";
 
 function Cart({ products }) {
   const { cart, addToCart, removeFromCart, clearCart } = useCart();
@@ -12,6 +13,7 @@ function Cart({ products }) {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [incrementLoading, setIncrementLoading] = useState(false); // Loading state for increment
   const [decrementLoading, setDecrementLoading] = useState(false); // Loading state for decrement
+  const [showConfetti, setShowConfetti] = useState(false);
 
   // Retrieve the registered username and password from local storage
   const registeredUsername = localStorage.getItem("registeredUsername");
@@ -123,6 +125,12 @@ function Cart({ products }) {
     setLoading(false);
     // Clear cart data and products displayed
     clearCart({});
+    setShowConfetti(true);
+
+    // Use setTimeout to hide the confetti after 5 seconds
+    setTimeout(() => {
+      setShowConfetti(false);
+    }, 8000); // 8 seconds timeout
   };
 
   const handleRemoveCart = (productId) => {
@@ -141,6 +149,7 @@ function Cart({ products }) {
     <>
       <CartMessage message={cartMessage} />
       <div className="Cart">
+        {showConfetti && <Confetti />}
         {loading ? (
           <p className="loading-anime"></p>
         ) : Object.keys(cart).length === 0 ? (
@@ -173,7 +182,7 @@ function Cart({ products }) {
                           <FaMinus />
                         )}
                       </button>
-                      <span className="cart-quantity">{cart[productId]}</span>
+                        <span className="cart-quantity">{cart[productId]}</span>
                       <button
                         className="cart-plus"
                         onClick={() => handleIncrement(productId)}
@@ -185,7 +194,7 @@ function Cart({ products }) {
                           <FaPlus />
                         )}
                       </button>
-                      <span className="cart-detail">{`${cart[productId]} (item(s) added)`}</span>
+                        <span className="cart-detail">{`${cart[productId]} (item(s) added)`}</span>
                       <FaTrash
                         className="trash"
                         onClick={() => handleRemoveCart(productId)}

@@ -13,6 +13,7 @@ export function UsernameProvider({ children }) {
     localStorage.getItem("registeredUsername");
   };
 
+
   const clearUsername = () => {
     setRegisteredUsername("");
     localStorage.removeItem("registeredUsername"); // Remove the username from local storage

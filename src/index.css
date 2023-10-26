@@ -741,6 +741,11 @@ img {
 .card h3{
   font-size: 14px;
 }
+
+#name{
+  font-size: 12px;
+}
+
 }
 
 @media(max-width: 520px) {
@@ -758,6 +763,10 @@ img {
   }
 
   .card h3 {
+    font-size: 12px;
+  }
+
+  #name {
     font-size: 12px;
   }
 }

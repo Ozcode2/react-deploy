@@ -53,43 +53,43 @@ const PasswordRecovery = () => {
 
   return (
     <>
-    <CartMessage message={cartMessage} />
-    <div className="Form">
-      {recoveryStatus === "success" ? (
-        <div className="success-container">
-          <div className="success-message">Password recovery email sent!</div>
-          <button
-            className="okay-button"
-            onClick={() => {
-              setRecoveryStatus(null);
-              navigate("/login");
-            }}
-          >
-            Okay
-          </button>
-        </div>
-      ) : (
-        <form onSubmit={handleRecovery}>
-          <div className="userID">
-            <label>Email:</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            {errors.email && <p className="error">{errors.email}</p>}
+      <CartMessage message={cartMessage} />
+      <div className="Form">
+        {recoveryStatus === "success" ? (
+          <div className="success-container">
+            <div className="success-message">Password recovery email sent!</div>
+            <button
+              className="okay-button"
+              onClick={() => {
+                setRecoveryStatus(null);
+                navigate("/login");
+              }}
+            >
+              Okay
+            </button>
           </div>
-          <div className="userID">
-            <button type="submit">Recover Password</button>
-            <p className="toLogin">
-              <Link to="/login">Remember your password? Login</Link>
-            </p>
-          </div>
-        </form>
-      )}
-    </div>
+        ) : (
+          <form onSubmit={handleRecovery} className="form-fill">
+            <div className="userID">
+              <label>Email:</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              {errors.email && <p className="error">{errors.email}</p>}
+            </div>
+            <div className="userID">
+              <button type="submit">Recover Password</button>
+              <p className="toLogin">
+                <Link to="/login">Remember your password? Login</Link>
+              </p>
+            </div>
+          </form>
+        )}
+      </div>
     </>
   );
 };

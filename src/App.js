@@ -13,6 +13,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "./api/products";
 import "./pages/Cart.css";
+import axios from "axios";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -40,6 +41,7 @@ function App() {
     fetchProducts();
   }, []);
 
+  
   useEffect(() => {
     const filteredResults = products.filter((product) =>
       product.title.toLowerCase().includes(search.toLowerCase())
@@ -47,6 +49,7 @@ function App() {
 
     setSearchResults(filteredResults.reverse());
   }, [products, search]);
+
 
   // Add a class to the body element when the user is on the Cart page
   useEffect(() => {
@@ -65,9 +68,7 @@ function App() {
         <Route
           exact
           path="/react-deploy"
-          element={
-              <Home products={searchResults} />
-          }
+          element={<Home products={searchResults} />}
         ></Route>
         <Route exact path="/sign-in" element={<RegistrationForm />}></Route>
         <Route

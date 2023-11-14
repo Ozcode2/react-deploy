@@ -20,16 +20,16 @@ const Login = () => {
 
   const [registrationStatus, setRegistrationStatus] = useState(null);
 
-  const handleSubmit = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
     // // Retrieve the registered username and password from local storage
     const registeredUsername = localStorage.getItem("storedUsername");
-    const registeredPassword = localStorage.getItem("registeredPassword");
+    const storedPassword = localStorage.getItem("registeredPassword");
 
     if (
-      formData.username === registeredUsername
-      && formData.password === registeredPassword
+      formData.username === registeredUsername &&
+      (saveUsername && formData.password === storedPassword)
     ) {
       setRegistrationStatus("success"); // Set login success to true
 
@@ -101,7 +101,7 @@ const Login = () => {
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="registry">
+        <form onSubmit={handleLogin} className="registry">
           <div className="userID">
             <label>Username:</label>
             <input

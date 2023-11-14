@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-
 const RegistrationForm = () => {
   const { setRegisteredUsername } = useUsername();
   const { clearCart } = useCart(); // Use the cart context
@@ -17,6 +16,7 @@ const RegistrationForm = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    phoneNumber: "",
   });
 
   const [errors, setErrors] = useState({
@@ -25,6 +25,7 @@ const RegistrationForm = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    phoneNumber: "",
   });
 
   const [registrationStatus, setRegistrationStatus] = useState(null);
@@ -95,10 +96,27 @@ const RegistrationForm = () => {
           password: "",
         }));
       }
+    } else if (name === "phoneNumber") {
+      if (!/^\d+$/.test(value)) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          phoneNumber: "Phone number must contain only numbers.",
+        }));
+      } else if (value.length !== 11) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          phoneNumber: "Phone number must be an 11-digit number.",
+        }));
+      } else {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          phoneNumber: "",
+        }));
+      }
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleNewUser = async (e) => {
     e.preventDefault();
 
     // Add password confirmation validation here
@@ -117,6 +135,7 @@ const RegistrationForm = () => {
       email: formData.email,
       password: formData.password,
       confirmPassword: formData.confirmPassword,
+      phoneNumber: formData.phoneNumber,
     };
 
     try {
@@ -133,7 +152,10 @@ const RegistrationForm = () => {
         // Data sent successfully
         setRegistrationStatus("success");
         // Save the registered username in localStorage
-        var getUsername = localStorage.setItem("registeredUsername", formData.username);
+        var getUsername = localStorage.setItem(
+          "registeredUsername",
+          formData.username
+        );
         localStorage.setItem("savedRegisteredUsername", getUsername);
 
         localStorage.setItem("registeredPassword", formData.password);
@@ -163,7 +185,6 @@ const RegistrationForm = () => {
     setDisplayPassword((prevDisplayPassword) => !prevDisplayPassword);
   };
 
-
   return (
     <div className="Form">
       {registrationStatus === "success" ? (
@@ -180,7 +201,7 @@ const RegistrationForm = () => {
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="registry">
+        <form onSubmit={handleNewUser} className="registry">
           <div className="userID">
             <label>Username:</label>
             <input
@@ -202,6 +223,19 @@ const RegistrationForm = () => {
               required
             />
             {errors.address && <p className="error">{errors.address}</p>}
+          </div>
+          <div className="userID">
+            <label>Phone Number:</label>
+            <input
+              type="tel"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+              required
+            />
+            {errors.phoneNumber && (
+              <p className="error">{errors.phoneNumber}</p>
+            )}
           </div>
           <div className="userID">
             <label>Email:</label>

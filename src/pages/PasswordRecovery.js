@@ -4,7 +4,6 @@ import { useNavigate, Link } from "react-router-dom";
 import CartMessage from "../components/CartMessage";
 
 const PasswordRecovery = () => {
-
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
@@ -40,15 +39,14 @@ const PasswordRecovery = () => {
     }
   };
 
-
   const handleRecovery = async (e) => {
     e.preventDefault();
 
-    const getEmail = localStorage.getItem("registeredEmail")
-    const getPassword = localStorage.getItem("registeredPassword")
-      if (formData.email === getEmail) {
-        setCartMessage("your password is " + getPassword)
-      }
+    const getEmail = localStorage.getItem("registeredEmail");
+    const getPassword = localStorage.getItem("registeredPassword");
+    if (formData.email === getEmail) {
+      setCartMessage("your password is " + getPassword);
+    }
   };
 
   return (

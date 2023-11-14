@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Rating from "./Rating";
 
 const Card = ({ products }) => {
   const productItems = products.map((product) => (
@@ -16,6 +17,7 @@ const Card = ({ products }) => {
         </h3>
         <p>₦{product.price}</p>
         <del>₦{product.cut}</del>
+        <p id="star-rating">{product.rating && <Rating rating={product.rating} />} </p>
       </div>
     </Link>
   ));

@@ -9,11 +9,11 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import PasswordRecovery from "./pages/PasswordRecovery";
+import Missing from "./pages/Missing";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "./api/products";
 import "./pages/Cart.css";
-import axios from "axios";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -41,7 +41,6 @@ function App() {
     fetchProducts();
   }, []);
 
-  
   useEffect(() => {
     const filteredResults = products.filter((product) =>
       product.title.toLowerCase().includes(search.toLowerCase())
@@ -50,7 +49,6 @@ function App() {
     setSearchResults(filteredResults.reverse());
   }, [products, search]);
 
-
   // Add a class to the body element when the user is on the Cart page
   useEffect(() => {
     if (location.pathname === "/cart") {
@@ -58,6 +56,7 @@ function App() {
     } else {
       document.body.classList.remove("CartPage");
     }
+
   }, [location.pathname]);
 
   return (
@@ -79,6 +78,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/password-recovery" element={<PasswordRecovery />} />
         <Route path="/cart" element={<Cart products={products} />} />
+        <Route path="*" element={<Missing />} />
       </Routes>
       <Footer />
     </div>

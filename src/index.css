@@ -583,12 +583,6 @@ img {
   cursor: pointer;
 }
 
-#check-icon{
-  position: absolute;
-  left: 41%;
-  top: 11px
-}
-
 .alert-container {
   position: fixed;
   top: 0;
@@ -730,6 +724,50 @@ img {
   color: #007bff;
 }
 
+i{
+  color: darkblue;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+}
+
+.Missing{
+  font-size: 30px;
+  color: #fff;
+  background-color: #000; 
+  display: grid;
+  place-content: flex-start;
+  flex-grow: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.Missing p{
+  margin-top: 1rem;
+}
+
+.Missing h2{
+  display: flex;
+  margin-top: 1rem;
+}
+
+#star-rating{
+  display: flex;
+  float: right;
+  margin-top: -6px;
+  font-size: 1.1rem;
+}
+
+#star {
+  font-size: 1.1rem;
+  margin-top: 3px;
+  position: absolute;
+  left: 70%;
+  top: 8rem;
+  display: flex;
+}
+
 @media(min-width: 520px) and (max-width:720px)  {
 .card-section {
   display: grid;
@@ -766,9 +804,20 @@ img {
     font-size: 12px;
   }
 
+  .card p {
+    font-size: 13px;
+    font-weight: 900;
+  }
+
   #name {
     font-size: 12px;
   }
+
+  #star-rating{
+    font-size: 0.8rem;
+    margin-top: 3px;
+  }
+
 }
 
 @media(min-width: 280px) and (max-width: 280.9px) {
@@ -780,6 +829,37 @@ img {
     margin-right: -8px;
     margin-top: 20px;
     
+  }
+
+  .searchForm{
+    margin-left: 5%;
+  }
+  .Header h1{
+    margin-left: 5%;
+  }
+
+  .Nav ul{
+    margin-left: 5%;
+  }
+
+  .Missing{
+    width: 115%;
+  }
+
+  body{
+    width: 170%;
+  }
+
+  .Missing h2{
+    margin-left: 4%;
+  }
+
+  .Missing p{
+    margin-left: 4%;
+  }
+
+  .details-section{
+    min-width: 160%;
   }
 
 }
@@ -845,6 +925,7 @@ img {
   .container{
     margin-bottom: 30px;
   }
+
 }
 
 @media(min-width: 610px) and (max-width: 760px) {
@@ -950,6 +1031,11 @@ img {
   .container {
     margin-bottom: 30px;
   }
+
+  .Missing {
+    font-size: 20px;
+  }
+
 }
 
 @media(min-width: 200px) and (max-width: 297.9px) {
@@ -979,28 +1065,18 @@ img {
 
 }
 
-@media(min-width: 750px) and (max-width: 1200px){
-    #check-icon {
-        position: fixed;
-        left: 35%;
-    }
-}
-
-@media(min-width: 450px) and (max-width: 749px){
-    #check-icon {
-        position: fixed;
-        left: 25%;
-    }
-}
 
 @media(min-width: 250px) and (max-width: 449px){
-    #check-icon {
-        position: fixed;
-        left: 15%;
-    }
-
-    .close{
-      left: 90%;
+   .close{
+        left: 90%;
     }
 }
 
+@media (max-width: 550px) {
+  .About p {
+      margin-top: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 10rem;
+  }
+}

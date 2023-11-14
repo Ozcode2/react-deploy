@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import { FaPlus, FaMinus, FaTrash } from "react-icons/fa";
 import CartMessage from "../components/CartMessage";
+import Rating from "../components/Rating";
 import "./Cart.css";
 import Confetti from "react-confetti";
 
@@ -170,6 +171,9 @@ function Cart({ products }) {
                     <h3 id="name">{product.title}</h3>
                     <p id="cost">₦{product.price}</p>
                     <p id="cut-off">₦{product.cut}</p>
+                    <p id="star">
+                      {product.rating && <Rating rating={product.rating} />}{" "}
+                    </p>
                     <div className="detail">
                       <button
                         className="cart-minus"
@@ -182,7 +186,7 @@ function Cart({ products }) {
                           <FaMinus />
                         )}
                       </button>
-                        <span className="cart-quantity">{cart[productId]}</span>
+                      <span className="cart-quantity">{cart[productId]}</span>
                       <button
                         className="cart-plus"
                         onClick={() => handleIncrement(productId)}
@@ -194,7 +198,7 @@ function Cart({ products }) {
                           <FaPlus />
                         )}
                       </button>
-                        <span className="cart-detail">{`${cart[productId]} (item(s) added)`}</span>
+                      <span className="cart-detail">{`${cart[productId]} (item(s) added)`}</span>
                       <FaTrash
                         className="trash"
                         onClick={() => handleRemoveCart(productId)}

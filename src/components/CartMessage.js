@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { FaCheck } from "react-icons/fa";
 
 function CartMessage({ message }) {
   const [displayStyle, setDisplayStyle] = useState("none");
@@ -24,7 +23,6 @@ function CartMessage({ message }) {
   return (
     <div className="cart-message-container" style={cartMessageStyle}>
       <div className="cart-message">
-        <FaCheck  id="check-icon"/>
         {message}
       </div>
       <button type="button" className="close" aria-label="Close" onClick={closeMessage}>

@@ -2,11 +2,21 @@
   "cartData": {
     "products": [
       {
-        "id": "10",
-        "title": "A mini Sliced Bread",
+        "id": "4",
+        "title": "A pack of fresh Green Beans",
+        "quantity": 2
+      },
+      {
+        "id": "8",
+        "title": " 1kg of Chicken",
+        "quantity": 2
+      },
+      {
+        "id": "12",
+        "title": "A pack of Knorr chicken",
         "quantity": 1
       }
     ],
-    "totalPrice": "₦ 1,000"
+    "totalPrice": "₦ 9,510"
   }
 }

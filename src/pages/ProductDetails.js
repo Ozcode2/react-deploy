@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { FaCartPlus, FaPlus, FaMinus } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
 import CartMessage from "../components/CartMessage";
+import Rating from "../components/Rating";
 
 function ProductDetail({ products }) {
   const { id } = useParams();
@@ -70,62 +71,65 @@ function ProductDetail({ products }) {
     return <div>Product not found</div>;
   }
 
-    return (
-      <div className="pro-section">
-        <CartMessage message={cartMessage} />
-        <section key={id} className="details-section">
-          <img
-            src={process.env.PUBLIC_URL + product.image}
-            className="image"
-            alt=""
-          ></img>
-          <div>
-            <h3 id="name">{product.title}</h3>
-            <p id="cost">₦{product.price}</p>
-            <p id="cut-off">₦{product.cut}</p>
-            {loading && cartOpen ? (
-              <div className="loading-animation"></div>
-            ) : cartOpen ? (
-              <div className="cart-button">
-                <button
-                  className="cart-minus"
-                  onClick={handleDecrement}
-                  disabled={decrementLoading}
-                >
-                  {decrementLoading ? (
-                    <div className="loading-display"></div>
-                  ) : (
-                    <FaMinus />
-                  )}
-                </button>
-                {quantity > 0 && (
-                  <span className="cart-quantity">{quantity}</span>
+  return (
+    <div className="pro-section">
+      <CartMessage message={cartMessage} />
+      <section key={id} className="details-section">
+        <img
+          src={process.env.PUBLIC_URL + product.image}
+          className="image"
+          alt=""
+        ></img>
+        <div>
+          <h3 id="name">{product.title}</h3>
+          <p id="cost">₦{product.price}</p>
+          <p id="cut-off">₦{product.cut}</p>
+          <p id="star">
+            {product.rating && <Rating rating={product.rating} />}{" "}
+          </p>
+          {loading && cartOpen ? (
+            <div className="loading-animation"></div>
+          ) : cartOpen ? (
+            <div className="cart-button">
+              <button
+                className="cart-minus"
+                onClick={handleDecrement}
+                disabled={decrementLoading}
+              >
+                {decrementLoading ? (
+                  <div className="loading-display"></div>
+                ) : (
+                  <FaMinus />
                 )}
-                <button
-                  className="cart-plus"
-                  onClick={handleIncrement}
-                  disabled={incrementLoading}
-                >
-                  {incrementLoading ? (
-                    <div className="loading-display"></div>
-                  ) : (
-                    <FaPlus />
-                  )}
-                </button>
-                {quantity > 0 && (
-                  <span className="cart-detail">{`${quantity} (item(s) added)`}</span>
-                )}
-              </div>
-            ) : (
-              <button className="cart-button" onClick={() => setCartOpen(true)}>
-                <FaCartPlus className="cart" />
-                Add To Cart
               </button>
-            )}
-          </div>
-        </section>
-      </div>
-    );
-  }
+              {quantity > 0 && (
+                <span className="cart-quantity">{quantity}</span>
+              )}
+              <button
+                className="cart-plus"
+                onClick={handleIncrement}
+                disabled={incrementLoading}
+              >
+                {incrementLoading ? (
+                  <div className="loading-display"></div>
+                ) : (
+                  <FaPlus />
+                )}
+              </button>
+              {quantity > 0 && (
+                <span className="cart-detail">{`${quantity} (item(s) added)`}</span>
+              )}
+            </div>
+          ) : (
+            <button className="cart-button" onClick={() => setCartOpen(true)}>
+              <FaCartPlus className="cart" />
+              Add To Cart
+            </button>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+}
 
 export default ProductDetail;

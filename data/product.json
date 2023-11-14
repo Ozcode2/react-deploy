@@ -5,84 +5,96 @@
       "title": "A pack of fresh Tomatoes",
       "price": " 1,250",
       "cut": " 1,140",
-      "image": "/Tomato.png"
+      "image": "/Tomato.png",
+      "rating": 4.6
     },
     {
       "id": 2,
       "title": "A bundle of Spring Onions",
       "price": " 2,650",
       "cut": " 2,600",
-      "image": "/spring.png"
+      "image": "/spring.png",
+      "rating": 2.5
     },
     {
       "id": 3,
       "title": "A pack of fresh Alligator Pepper",
       "price": " 2,270",
       "cut": " 2,110",
-      "image": "/pepper.png"
+      "image": "/pepper.png",
+      "rating": 3.5
     },
     {
       "id": 4,
       "title": "A pack of fresh Green Beans",
       "price": " 1,430",
       "cut": " 1,325",
-      "image": "/green.png"
+      "image": "/green.png",
+      "rating": 4.3
     },
     {
       "id": 5,
       "title": "A mini crate of chicken Eggs",
       "price": " 5,275",
       "cut": " 5,145",
-      "image": "/egg.png"
+      "image": "/egg.png",
+      "rating": 4.5
     },
     {
       "id": 6,
       "title": "A bunch of ripe Plantain",
       "price": " 1,275",
       "cut": " 1,130",
-      "image": "/plantain.png"
+      "image": "/plantain.png",
+      "rating": 5
     },
     {
       "id": 7,
       "title": "freshly harvested Cabbage",
       "price": " 895",
       "cut": " 830",
-      "image": "/cabbage.png"
+      "image": "/cabbage.png",
+      "rating": 3.7
     },
     {
       "id": 8,
       "title": " 1kg of Chicken",
       "price": " 2,650",
       "cut": " 2,575",
-      "image": "/chicken.png"
+      "image": "/chicken.png",
+      "rating": 3.9
     },
     {
       "id": 9,
       "title": "A bunch of fresh Carrot",
       "price": " 650",
       "cut": " 540",
-      "image": "/carrot.png"
+      "image": "/carrot.png",
+      "rating": 4.3
     },
     {
       "id": 10,
       "title": "A mini Sliced Bread",
       "price": " 1000",
       "cut": " 980",
-      "image": "/bread.png"
+      "image": "/bread.png",
+      "rating": 4
     },
     {
       "id": 11,
       "title": "25kg Mama's Pride Rice",
       "price": " 9,990",
       "cut": " 9,280",
-      "image": "/rice.png"
+      "image": "/rice.png",
+      "rating": 3
     },
     {
       "id": 12,
       "title": "A pack of Knorr chicken",
       "price": " 1,350",
       "cut": " 1,225",
-      "image": "/knorr.png"
+      "image": "/knorr.png",
+      "rating": 4.1
     }
   ]
 }
